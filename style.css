@@ -1,0 +1,181 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Inter', sans-serif;
+}
+
+head {
+    display: none;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(20deg, #e1e7ee, #948dd3);
+}
+
+/* header-start */
+.header {
+    width: 100%;
+    border-bottom: 2px solid black;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, rgb(152,146,212), #BBC9D9, rgb(176,174,221));
+    text-align: center;
+}
+
+.header-title {
+    display: flex;
+    justify-content: center;
+    line-height: 60px;
+    font-weight: 300;
+}
+
+.text-container-1 {
+    display: flex;
+    justify-content: center;
+    color: #e1e7ee;
+    margin-right: 2px;
+}
+
+.text-container-2 {
+    display: flex;
+    justify-content: center;
+    color: #e1e7ee;
+    margin-left: 2px;
+}
+
+.letters {
+    margin-left: 1px;
+}
+
+.letters:hover {
+    color: #3a4083;
+    text-transform: uppercase;
+}
+/* header-end */
+
+/* content-start */
+
+.content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+    width: 100%;
+    max-width: 1140px;
+    padding: 60px 10px 60px 10px;
+    margin: 0 auto;
+}
+
+.piano {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 640px;
+    max-height: 270px;
+}
+
+.piano-key {
+    height: 270px;
+    width: 80px;
+    margin-left: 6px;
+    border: 2px solid #E0E1E2;
+    background-color: #E0E1E2;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 6px 9px 12px -4px rgba(34, 60, 80, 0.3);
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.piano-key:hover {
+    background-color: #fff;
+}
+
+.piano-key:active {
+    transform: scale(0.95);
+}
+
+.keys-black {
+    position: absolute;
+    left: 60px;
+    right: 60px;
+    bottom: 102px;
+    display: flex;
+    justify-content: space-around;
+    pointer-events: none;
+}
+
+.piano-key-black-none {
+    height: 170px;
+    width: 60px;
+    border-radius: 0px 0px 12px 12px;
+    margin-left: 5px;
+    background: #0000;
+    z-index: 3;
+    transition: 0.3s;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.piano-key-black {
+    height: 170px;
+    width: 60px;
+    border-radius: 0px 0px 12px 12px;
+    margin-left: 5px;
+    background: linear-gradient(20deg, #BBBBE1, #A29DD8);
+    z-index: 3;
+    transition: 0.3s;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.piano-key-black:active {
+    transform: scale(0.95);
+}
+
+.piano-key-black:hover {
+    background: linear-gradient(45deg, #c1c1db, #a8a3d8);
+}
+/* content-end */
+
+/* footer-start */
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-top: 2px solid black;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to left, rgb(197,198,228), rgb(172,168,220), rgb(221,227,236));
+}
+
+.footer-container {
+    height: 100%;
+    margin: 0.5vh;
+}
+
+.github {
+    display: block;
+    width: 120px;
+    height: 45px;
+    padding-left: 45px;
+    background-image: url(files/icon/github.svg);
+    background-size: 35px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    line-height: 45px;
+    color: rgb(151,144,212);
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    transition: 0.3s;
+}
+
+.github:hover {
+    color: rgb(111, 105, 165);
+    text-decoration: none;
+    font-size: 23px;
+}

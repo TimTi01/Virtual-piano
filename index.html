@@ -3,9 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>Virtual-piano</title>
 </head>
 <body>
-    
+
+    <header class="header">
+        <h1 class="header-title">
+            <div class="text-container-1">
+                <div class="letters">V</div>
+                <div class="letters">i</div>
+                <div class="letters">r</div>
+                <div class="letters">t</div>
+                <div class="letters">u</div>
+                <div class="letters">a</div>
+                <div class="letters">l</div>
+            </div>
+            <div class="text-container-2">
+                <div class="constainer-2_text-animation-1-p header_letter_2 letters">p</div>
+                <div class="constainer-2_text-animation-2-i header_letter_2 letters">i</div>
+                <div class="constainer-2_text-animation-3-a header_letter_2 letters">a</div>
+                <div class="constainer-2_text-animation-4-n header_letter_2 letters">n</div>
+                <div class="constainer-2_text-animation-5-o header_letter_2 letters">o</div>
+            </div>
+        </h1>
+    </header>
+
+    <main class="content">
+        <div class="piano">
+            <div class="piano-key" data-number-key="1"></div>
+            <div class="piano-key" data-number-key="2"></div>
+            <div class="piano-key" data-number-key="3"></div>
+            <div class="piano-key" data-number-key="4"></div>
+            <div class="piano-key" data-number-key="5"></div>
+            <div class="piano-key" data-number-key="6"></div>
+            <div class="piano-key" data-number-key="7"></div>
+            <div class="keys-black">
+                <div class="piano-key-black" data-number-key-black="1b"></div>
+                <div class="piano-key-black" data-number-key-black="2b"></div>
+                <div class="piano-key-black-none" data-number-key-black="none"></div>
+                <div class="piano-key-black" data-number-key-black="3b"></div>
+                <div class="piano-key-black" data-number-key-black="4b"></div>
+                <div class="piano-key-black" data-number-key-black="5b"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <a class="github" href="https://github.com/TimTi01" target="_blank">GitHub</a>
+        </div>
+    </footer>
+    <!-- audio -->
+    <audio data-key-num="1" src="files/notes/3rd-octave/1.mp3"></audio>
+    <audio data-key-num="2" src="files/notes/3rd-octave/2.mp3"></audio>
+    <audio data-key-num="3" src="files/notes/3rd-octave/3.mp3"></audio>
+    <audio data-key-num="4" src="files/notes/3rd-octave/4.mp3"></audio>
+    <audio data-key-num="5" src="files/notes/3rd-octave/5.mp3"></audio>
+    <audio data-key-num="6" src="files/notes/3rd-octave/6.mp3"></audio>
+    <audio data-key-num="7" src="files/notes/3rd-octave/7.mp3"></audio>
+    <audio data-key-num="1b" src="files/notes/3rd-octave/blackKeys/1b.mp3"></audio>
+    <audio data-key-num="2b" src="files/notes/3rd-octave/blackKeys/2b.mp3"></audio>
+    <audio data-key-num="3b" src="files/notes/3rd-octave/blackKeys/3b.mp3"></audio>
+    <audio data-key-num="4b" src="files/notes/3rd-octave/blackKeys/4b.mp3"></audio>
+    <audio data-key-num="5b" src="files/notes/3rd-octave/blackKeys/5b.mp3"></audio>
+    <!-- script js -->
+    <script src="script.js"></script>
 </body>
 </html>
