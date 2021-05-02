@@ -8,7 +8,6 @@
     <title>Virtual-piano</title>
 </head>
 <body>
-
     <header class="header">
         <h1 class="header-title">
             <div class="text-container-1">
@@ -31,23 +30,152 @@
     </header>
 
     <main class="content">
-        <div class="piano">
-            <div class="piano-key" data-number-key="1"></div>
-            <div class="piano-key" data-number-key="2"></div>
-            <div class="piano-key" data-number-key="3"></div>
-            <div class="piano-key" data-number-key="4"></div>
-            <div class="piano-key" data-number-key="5"></div>
-            <div class="piano-key" data-number-key="6"></div>
-            <div class="piano-key" data-number-key="7"></div>
-            <div class="keys-black">
-                <div class="piano-key-black" data-number-key-black="1b"></div>
-                <div class="piano-key-black" data-number-key-black="2b"></div>
-                <div class="piano-key-black-none" data-number-key-black="none"></div>
-                <div class="piano-key-black" data-number-key-black="3b"></div>
-                <div class="piano-key-black" data-number-key-black="4b"></div>
-                <div class="piano-key-black" data-number-key-black="5b"></div>
+        <div class="content_container-slider">
+            <div class="slider_button-wrap-left">
+                <div class="slider_button-left"></div>
+            </div>
+            <div class="slider">            
+                <div class="container-picture">
+                    <div class="slider-track">
+                        <div class="img_1" data-index="0" data-elem="pictures"></div>
+                        <div class="img_2" data-index="1" data-elem="pictures"></div>
+                        <div class="img_3" data-index="2" data-elem="pictures"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider_button-wrap-right">
+                <div class="slider_button-right"></div>
             </div>
         </div>
+
+        <div class="piano">
+            <div class="container-top">
+                <div class="piano-key" data-number-key="2"></div>
+                <div class="piano-key" data-number-key="3"></div>
+                <!-- ~~~~~~~~ -->
+                <!-- contra-octave-start -->
+                <div class="piano-key key-one" data-number-key="1"></div>
+                <div class="piano-key" data-number-key="2"></div>
+                <div class="piano-key" data-number-key="3"></div>
+                <div class="piano-key" data-number-key="4"></div>
+                <div class="piano-key" data-number-key="5"></div>
+                <div class="piano-key" data-number-key="6"></div>
+                <div class="piano-key" data-number-key="7"></div>
+                <!-- contra-octave-end -->
+                <!-- ~~~~~~~~ -->
+                <div class="piano-key" data-number-key="1"></div>
+                <div class="piano-key" data-number-key="2"></div>
+                <div class="piano-key" data-number-key="3"></div>
+                <div class="piano-key" data-number-key="4"></div>
+                <div class="piano-key" data-number-key="5"></div>
+                <div class="piano-key" data-number-key="6"></div>
+                <div class="piano-key" data-number-key="7"></div>
+                <!-- ~~~~~~~~ -->
+                <div class="piano-key" data-number-key="1"></div>
+                <div class="piano-key" data-number-key="2"></div>
+                <div class="piano-key" data-number-key="3"></div>
+                <div class="piano-key" data-number-key="4"></div>
+                <div class="piano-key" data-number-key="5"></div>
+                <div class="piano-key" data-number-key="6"></div>
+                <div class="piano-key" data-number-key="7"></div>
+                <div class="wrap-keys-black-top">
+                    <div class="piano-key-black-none" data-number-key-black="none"></div>
+                    <div class="piano-key-black" data-number-key-black="sb"></div>
+                    <!-- ~~~~~~~~~ -->
+                    <div class="piano-key-black-none" data-number-key-black="none"></div>
+                    <div class="piano-key-black" data-number-key-black="ct-1b"></div>
+                    <div class="piano-key-black" data-number-key-black="ct-2b"></div>
+                    <div class="piano-key-black-none" data-number-key-black="none"></div>
+                    <div class="piano-key-black" data-number-key-black="ct-3b"></div>
+                    <div class="piano-key-black" data-number-key-black="ct-4b"></div>
+                    <div class="piano-key-black" data-number-key-black="ct-5b"></div>
+                    <!-- ~~~~~~~~~ -->
+                    <div class="piano-key-black-none" data-number-key-black="none"></div>
+                    <div class="piano-key-black" data-number-key-black="bg-1b"></div>
+                    <div class="piano-key-black" data-number-key-black="bg-2b"></div>
+                    <div class="piano-key-black-none" data-number-key-black="none"></div>
+                    <div class="piano-key-black" data-number-key-black="bg-3b"></div>
+                    <div class="piano-key-black" data-number-key-black="bg-4b"></div>
+                    <div class="piano-key-black" data-number-key-black="bg-5b"></div>
+                    <!-- ~~~~~~~~~ -->
+                    <div class="piano-key-black-none" data-number-key-black="none"></div>
+                    <div class="piano-key-black" data-number-key-black="lt-1b"></div>
+                    <div class="piano-key-black" data-number-key-black="lt-2b"></div>
+                    <div class="piano-key-black-none" data-number-key-black="none"></div>
+                    <div class="piano-key-black" data-number-key-black="lt-3b"></div>
+                    <div class="piano-key-black" data-number-key-black="lt-4b"></div>
+                    <div class="piano-key-black" data-number-key-black="lt-5b"></div>
+                </div>
+            </div>
+            <div class="container-bottom">
+                <!-- contra-octave-start -->
+                <div class="piano-key key-one" data-number-key="1"></div>
+                <div class="piano-key" data-number-key="2"></div>
+                <div class="piano-key" data-number-key="3"></div>
+                <div class="piano-key" data-number-key="4"></div>
+                <div class="piano-key" data-number-key="5"></div>
+                <div class="piano-key" data-number-key="6"></div>
+                <div class="piano-key" data-number-key="7"></div>
+                <!-- contra-octave-end -->
+                <!-- ~~~~~~~~ -->
+                <div class="piano-key" data-number-key="1"></div>
+                <div class="piano-key" data-number-key="2"></div>
+                <div class="piano-key" data-number-key="3"></div>
+                <div class="piano-key" data-number-key="4"></div>
+                <div class="piano-key" data-number-key="5"></div>
+                <div class="piano-key" data-number-key="6"></div>
+                <div class="piano-key" data-number-key="7"></div>
+                <!-- ~~~~~~~~ -->
+                <div class="piano-key" data-number-key="1"></div>
+                <div class="piano-key" data-number-key="2"></div>
+                <div class="piano-key" data-number-key="3"></div>
+                <div class="piano-key" data-number-key="4"></div>
+                <div class="piano-key" data-number-key="5"></div>
+                <div class="piano-key" data-number-key="6"></div>
+                <div class="piano-key" data-number-key="7"></div>
+                <!-- ~~~~~~~~ -->
+                <div class="piano-key" data-number-key="1"></div>
+                <div class="piano-key" data-number-key="2"></div>
+                <div class="piano-key" data-number-key="3"></div>
+                <div class="piano-key" data-number-key="4"></div>
+                <div class="piano-key" data-number-key="5"></div>
+                <div class="piano-key" data-number-key="6"></div>
+                <div class="piano-key" data-number-key="7"></div>
+                <div class="piano-key" data-number-key="1"></div>
+                <div class="wrap-keys-black-bottom">
+                    <div class="piano-key-black-none" data-number-key-black="none"></div>
+                    <div class="piano-key-black" data-number-key-black="ct-1b"></div>
+                    <div class="piano-key-black" data-number-key-black="ct-2b"></div>
+                    <div class="piano-key-black-none" data-number-key-black="none"></div>
+                    <div class="piano-key-black" data-number-key-black="ct-3b"></div>
+                    <div class="piano-key-black" data-number-key-black="ct-4b"></div>
+                    <div class="piano-key-black" data-number-key-black="ct-5b"></div>
+                    <!-- ~~~~~~~~~ -->
+                    <div class="piano-key-black-none" data-number-key-black="none"></div>
+                    <div class="piano-key-black" data-number-key-black="bg-1b"></div>
+                    <div class="piano-key-black" data-number-key-black="bg-2b"></div>
+                    <div class="piano-key-black-none" data-number-key-black="none"></div>
+                    <div class="piano-key-black" data-number-key-black="bg-3b"></div>
+                    <div class="piano-key-black" data-number-key-black="bg-4b"></div>
+                    <div class="piano-key-black" data-number-key-black="bg-5b"></div>
+                    <!-- ~~~~~~~~~ -->
+                    <div class="piano-key-black-none" data-number-key-black="none"></div>
+                    <div class="piano-key-black" data-number-key-black="lt-1b"></div>
+                    <div class="piano-key-black" data-number-key-black="lt-2b"></div>
+                    <div class="piano-key-black-none" data-number-key-black="none"></div>
+                    <div class="piano-key-black" data-number-key-black="lt-3b"></div>
+                    <div class="piano-key-black" data-number-key-black="lt-4b"></div>
+                    <div class="piano-key-black" data-number-key-black="lt-5b"></div>
+                    <!-- ~~~~~~~~~ -->
+                    <div class="piano-key-black-none" data-number-key-black="none"></div>
+                    <div class="piano-key-black" data-number-key-black="lt-1b"></div>
+                    <div class="piano-key-black" data-number-key-black="lt-2b"></div>
+                    <div class="piano-key-black-none" data-number-key-black="none"></div>
+                    <div class="piano-key-black" data-number-key-black="lt-3b"></div>
+                    <div class="piano-key-black" data-number-key-black="lt-4b"></div>
+                    <div class="piano-key-black" data-number-key-black="lt-5b"></div>
+                </div>
+            </div>
     </main>
 
     <footer class="footer">

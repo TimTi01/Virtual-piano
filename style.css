@@ -12,13 +12,14 @@ head {
 
 body {
     min-height: 100vh;
-    background: linear-gradient(20deg, #e1e7ee, #948dd3);
+    background: #fff;
+    /* background: #F0F8FF; */
 }
 
 /* header-start */
 .header {
     width: 100%;
-    border-bottom: 2px solid black;
+    /* border-bottom: 2px solid black; */
     border-image-slice: 1;
     border-image-source: linear-gradient(to left, rgb(152,146,212), #BBC9D9, rgb(176,174,221));
     text-align: center;
@@ -55,91 +56,217 @@ body {
 }
 /* header-end */
 
+
 /* content-start */
 
 .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* slider-start */
+
+.content_container-slider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.slider {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 120px);
-    width: 100%;
-    max-width: 1140px;
-    padding: 60px 10px 60px 10px;
-    margin: 0 auto;
+    height: 300px;
+    width: 300px;
+    margin: 0 10px 0 10px;
+    border-radius: 50px;
+    background: linear-gradient(115deg, #f8f8fb, #d1d1d4);
+    box-shadow: 4px 4px 10px #c5c5c8, 
+                -4px -4px 10px #ffffff;
 }
 
+.container-picture {
+    position: relative;
+    height: 290px;
+    width: 290px;
+    border-radius: 48px;
+    background: #E8E8EB;
+    box-shadow: inset 2px 3px 6px #8f8f94, 
+                inset -1px -1px 2px #ffffff;
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    justify-content: center;
+    height: 290px;
+}
+
+.img_1,
+.img_2,
+.img_3 {
+    height: 290px;
+    min-width: 290px;
+}
+
+.img_1 {
+    background-color: rgb(220, 245, 1);
+}
+.img_2 {
+    background-color: rgb(189, 19, 19);
+}
+.img_3 {
+    background-color: rgb(42, 221, 6);
+}
+
+.slider_button-wrap-left,
+.slider_button-wrap-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+    background: #E8E8EB;
+    box-shadow: 1px 2px 5px #c5c5c8, 
+                -3px -3px 10px #ffffff;
+}
+
+.slider_button-left,
+.slider_button-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    background: linear-gradient(145deg, rgb(248, 248, 251), rgb(209, 209, 212));
+    box-shadow: rgb(197 197 200) 3px 3px 5px, 
+                rgb(255 255 255) -2px -2px 6px;
+    cursor: pointer;
+}
+
+.slider_button-left:active,
+.slider_button-right:active {
+    background: #E8E8EB;
+    box-shadow: inset 3px 3px 6px #c5c5c8,
+                inset -3px -3px 6px #ffffff;
+}
+
+/* slider-end */
+
+/* piano-start */
 .piano {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 640px;
-    max-height: 270px;
+    width: 94%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 30px;
+    background: #E8E8EB;
+    box-shadow: 4px 4px 4px #c5c5c8, 
+                -1px -2px 10px #ffffff, 
+                inset -3px -1px 4px 0px #c5c5c8, 
+                inset 3px 2px 4px #ffffff;
 }
+
+.container-top {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.container-bottom {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* white-piano-key_start */
 
 .piano-key {
-    height: 270px;
-    width: 80px;
-    margin-left: 6px;
-    border: 2px solid #E0E1E2;
-    background-color: #E0E1E2;
+    position: relative;
+    width: 30px;
+    height: 100px;
+    margin: 3px;
+    outline: none;
     border-radius: 0 0 15px 15px;
-    box-shadow: 6px 9px 12px -4px rgba(34, 60, 80, 0.3);
-    transition: 0.3s;
+    transition: 0.13s ease-in-out;
     cursor: pointer;
-}
-
-.piano-key:hover {
-    background-color: #fff;
+    box-shadow: -7px -7px 20px 0px #fff9,
+                -4px -4px 5px 0px #fff9,
+                7px 7px 20px 0px #0002,
+                4px 4px 5px 0px #0001;
 }
 
 .piano-key:active {
-    transform: scale(0.95);
+    box-shadow: none;
+    box-shadow: -2px -2px 8px 0px #fff9,
+                0px 0px 1px 0px #fff9,
+                0px 0px 1px 0px #0001;
 }
 
-.keys-black {
+/* white-piano-key_end */
+
+
+/* black-piano-key_start */
+
+.wrap-keys-black-top {
     position: absolute;
-    left: 60px;
-    right: 60px;
-    bottom: 102px;
+    top: 3px;
+    left: 100px;
+    right: 135px;
     display: flex;
-    justify-content: space-around;
-    pointer-events: none;
-}
-
-.piano-key-black-none {
-    height: 170px;
-    width: 60px;
-    border-radius: 0px 0px 12px 12px;
-    margin-left: 5px;
-    background: #0000;
-    z-index: 3;
-    transition: 0.3s;
-    cursor: pointer;
-    pointer-events: auto;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .piano-key-black {
-    height: 170px;
-    width: 60px;
-    border-radius: 0px 0px 12px 12px;
-    margin-left: 5px;
-    background: linear-gradient(20deg, #BBBBE1, #A29DD8);
-    z-index: 3;
-    transition: 0.3s;
+    width: 18px;
+    height: 70px;
+    border-radius: 0 0 15px 15px;
+    transition: 0.13s ease-in-out;
     cursor: pointer;
-    pointer-events: auto;
+    background: linear-gradient(192deg, #6b6b6b, #000000);
+    box-shadow: 1px 1px 2px #2f2f2f;
 }
 
 .piano-key-black:active {
-    transform: scale(0.95);
+    box-shadow: inset 6px 8px 8px #cbd1d6, inset 3px 3px 6px #ffffff;
 }
 
-.piano-key-black:hover {
-    background: linear-gradient(45deg, #c1c1db, #a8a3d8);
+.piano-key-black-none {
+    width: 18px;
+    height: 70px;
+    border-radius: 0 0 15px 15px;
 }
+
+.wrap-keys-black-bottom {
+    position: absolute;
+    top: 3px;
+    left: -7px;
+    right: 62px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+/* black-piano-key_end */
+
+/* piano-end */
+
 /* content-end */
 
 /* footer-start */
@@ -148,7 +275,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    border-top: 2px solid black;
+    /* border-top: 2px solid black; */
     border-image-slice: 1;
     border-image-source: linear-gradient(to left, rgb(197,198,228), rgb(172,168,220), rgb(221,227,236));
 }
