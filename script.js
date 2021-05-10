@@ -5,20 +5,19 @@ bindClickListenerBlackKeys(blackPianoKeys);
 
 // slider
 let position = 0;
+let numberPictures = document.body.querySelectorAll('[data-elem="pictures"]').length; //3
 let wrapSlider = document.body.querySelector('.container-picture');
-let wrapSliderWidth = wrapSlider.offsetWidth; //290px
+let wrapSliderWidth = wrapSlider.offsetWidth; //390px
 let slider = document.body.querySelector('.slider-track');
 let sliderWhidth = slider.offsetWidth;
-
 let picturesWhidth = wrapSliderWidth;
+let trackWidth = (numberPictures * picturesWhidth) - wrapSliderWidth;
 
-// slider-bttns-start
-const leftSliderKey = findLeftSliderKeys();
-bindClickListenerSlidBttnLeft(leftSliderKey);
-const rightSliderKey = findRightSliderKey();
-bindClickListenerSlidBttnRight(rightSliderKey);
-// slider-bttns-end
 
+
+// slider-bttns
+const leftButton = document.body.querySelector('.slider_button-left');
+const rightButton = document.body.querySelector('.slider_button-right');
 
 function findAllWhitePianoKeys() {
     let keys = document.body.querySelectorAll('.piano-key');
@@ -54,32 +53,28 @@ function bindClickListenerBlackKeys(pianoKeys) {
 
 // slider-functions-start
 
-function findLeftSliderKeys() {
-    let leftButton = document.body.querySelector('.slider_button-left');
-    return leftButton;
+
+leftButton.addEventListener('click', () => {
+    position += picturesWhidth;
+    changPosition = slider.style.transform = `translateX(${position}px)`;
+
+    blockBttns();
+});
+
+
+rightButton.addEventListener('click', () => {
+    position -= picturesWhidth;
+    changPosition = slider.style.transform = `translateX(${position}px)`;
+    
+    blockBttns();
+});
+
+
+
+// button block functions
+function blockBttns() {
+    leftButton.disabled = position === 0;
+    rightButton.disabled = position === -trackWidth;
 }
 
-function bindClickListenerSlidBttnLeft(bttn) {
-    bttn.addEventListener('click', (bttn) => {
-        position -= picturesWhidth;
-
-        changPosition = slider.style.transform = `translateX(${-picturesWhidth}px)`;
-        console.log(position);
-    });
-}
-
-
-
-function findRightSliderKey() {
-    let rightButton = document.body.querySelector('.slider_button-right');
-    return rightButton;
-}
-
-function bindClickListenerSlidBttnRight(bttn) {
-    bttn.addEventListener('click', (bttn) => {
-        position += picturesWhidth;
-
-        changPosition = slider.style.transform = `translateX(${picturesWhidth}px)`;
-        console.log(position);
-    });
-}
+blockBttns();

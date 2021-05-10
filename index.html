@@ -3,53 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Vibur&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" type="text/css" href="/style.css">
     <title>Virtual-piano</title>
 </head>
 <body>
     <header class="header">
-        <h1 class="header-title">
-            <div class="text-container-1">
-                <div class="letters">V</div>
-                <div class="letters">i</div>
-                <div class="letters">r</div>
-                <div class="letters">t</div>
-                <div class="letters">u</div>
-                <div class="letters">a</div>
-                <div class="letters">l</div>
-            </div>
-            <div class="text-container-2">
-                <div class="constainer-2_text-animation-1-p header_letter_2 letters">p</div>
-                <div class="constainer-2_text-animation-2-i header_letter_2 letters">i</div>
-                <div class="constainer-2_text-animation-3-a header_letter_2 letters">a</div>
-                <div class="constainer-2_text-animation-4-n header_letter_2 letters">n</div>
-                <div class="constainer-2_text-animation-5-o header_letter_2 letters">o</div>
-            </div>
-        </h1>
+        <h1 class="header-text">Virtual piano</h1>
     </header>
 
     <main class="content">
         <div class="content_container-slider">
+
             <div class="slider_button-wrap-left">
-                <div class="slider_button-left"></div>
+                <button class="slider_button-left"></button>
             </div>
+
             <div class="slider">            
                 <div class="container-picture">
                     <div class="slider-track">
-                        <div class="img_1" data-index="0" data-elem="pictures"></div>
-                        <div class="img_2" data-index="1" data-elem="pictures"></div>
-                        <div class="img_3" data-index="2" data-elem="pictures"></div>
+                        <img class="picture_1" src="files/photos/img-sditd.png" alt="###" data-index="0" data-elem="pictures">
+                        <img class="picture_2" src="files/photos/img-will-he-1.png" alt="###" data-index="1" data-elem="pictures">
+                        <img class="picture_3" src="files/photos/img-modus.png" alt="###" data-index="2" data-elem="pictures">
                     </div>
                 </div>
             </div>
+
             <div class="slider_button-wrap-right">
-                <div class="slider_button-right"></div>
+                <button class="slider_button-right"></button>
             </div>
+
         </div>
 
         <div class="piano">
             <div class="container-top">
+
+                <div class="container-github">
+                    <a class="github" href="https://github.com/TimTi01" target="_blank"></a>
+                </div>
+
                 <div class="piano-key" data-number-key="2"></div>
                 <div class="piano-key" data-number-key="3"></div>
                 <!-- ~~~~~~~~ -->
@@ -78,6 +71,20 @@
                 <div class="piano-key" data-number-key="5"></div>
                 <div class="piano-key" data-number-key="6"></div>
                 <div class="piano-key" data-number-key="7"></div>
+
+                <div class="container-bttns">
+                    <div class="container_indicators">
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                    </div>
+                    <div class="wrap-bttn-play">
+                        <button class="bttn-play">
+                            <img class="img_play" src="files/icon/play.svg" alt="button play">
+                        </button>
+                    </div>
+                </div>
+
                 <div class="wrap-keys-black-top">
                     <div class="piano-key-black-none" data-number-key-black="none"></div>
                     <div class="piano-key-black" data-number-key-black="sb"></div>
@@ -177,12 +184,6 @@
                 </div>
             </div>
     </main>
-
-    <footer class="footer">
-        <div class="footer-container">
-            <a class="github" href="https://github.com/TimTi01" target="_blank">GitHub</a>
-        </div>
-    </footer>
     <!-- audio -->
     <audio data-key-num="1" src="files/notes/3rd-octave/1.mp3"></audio>
     <audio data-key-num="2" src="files/notes/3rd-octave/2.mp3"></audio>
