@@ -107,7 +107,19 @@ body {
                 -3px -3px 10px #ffffff;
 }
 
-.slider_button-left,
+.slider_button-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    background: linear-gradient(145deg, rgb(248, 248, 251), rgb(209, 209, 212));
+    box-shadow: rgb(197 197 200) 3px 3px 5px, 
+                rgb(255 255 255) -2px -2px 6px;
+    transition: .9s;
+    cursor: pointer;
+}
 .slider_button-right {
     display: flex;
     justify-content: center;
@@ -127,6 +139,12 @@ body {
     background: #E8E8EB;
     box-shadow: inset 3px 3px 6px #c5c5c8,
                 inset -3px -3px 6px #ffffff;
+}
+
+.block {
+    background: rgb(128 128 128 / 10%);
+    box-shadow: none;
+    cursor: auto;
 }
 
 /* slider-end */
@@ -260,51 +278,52 @@ body {
 .indicator {
     height: 40%;
     width: 15%;
-    border-radius: 50%;
-    background: linear-gradient(152deg, #ff5a4d, #d6180b);
-    box-shadow: 1px 1px 4px 0px #cf392e, -2px -1px 7px #ff4d3e;
+    transform: skew(330deg);
+    background: linear-gradient(152deg, #ff0a19, #d6180b);
+    box-shadow: 1px 1px 4px 0px #cf392e, 1px 0px 8px #eca19b;
 }
-
-.indicator:hover {
+.active {
     background: linear-gradient(152deg, #4dff5c, #23d60b);
     box-shadow: 1px 1px 4px 0px #3bcf2e, -2px -1px 7px #3eff88;
+}
+.pause {
+    background: linear-gradient(152deg, #fffc4d, #d6d30b);
+    box-shadow: 1px 1px 4px 0px #cfcc2e, -2px -1px 7px #fffc3e;
 }
 
 .wrap-bttn-play {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     height: 50px;
-    width: 60%;
-    border-radius: 10px;
-    background: #e1e1e4;
-    box-shadow: inset 0px 0px 6px #bfbfc2, 
-                inset 3px 3px 6px #ffffff;
+    width: 100%;
+    border-radius: 5px;
+    background: #b9b9bd;
+    box-shadow: inset 0px 0px 6px #bfbfc2, inset 3px 3px 6px #ffffff;
 }
 
-.bttn-play {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70%;
-    width: 70%;
-    border-radius: 10px;
-    background: #e1e1e4;
-    box-shadow: -2px -1px 2px #bfbfc2, 
-                1px 2px 3px #ffffff;
-    transition: .5s;
+.playback-buttons {
+    height: 90%;
+    width: 30%;
+    border: 2px solid rgb(218 218 218 / 50%);
+    background: rgb(234, 234, 236);
+    box-shadow: 3px 3px 7px #c9c9cb;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-.bttn-play:active {
-    border: 0.1px solid #00000018;
-    background: #ffffff18;
-    box-shadow: none;
+.playback-buttons:active {
+    transform: scale(0.9);
+}
+.playback-buttons:hover {
+    background: rgb(241, 241, 243);
 }
 
-.img_play {
+.playback-buttons img {
     height: 100%;
     width: 100%;
+    margin: 0 auto;
 }
 
 /* github-start */
