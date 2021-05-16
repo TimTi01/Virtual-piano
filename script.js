@@ -1,4 +1,5 @@
 // slider
+// let chboxOnOff = "on";
 let indexPictures = 0;
 let position = 0;
 let numberPictures = document.body.querySelectorAll('[data-elem="pictures"]').length; //3
@@ -11,21 +12,21 @@ let trackWidth = (numberPictures * picturesWhidth) - wrapSliderWidth;
 
 // slider left and right bttns
 const leftButton = findLeftButton();
-bindClickListenerLeftButton(leftButton);
 const rightButton = findRightButton();
-bindClickListenerRightButton(rightButton);
 // piano keys
 const whitePianoKeys = findAllWhitePianoKeys();
-bindClickListenerWhiteKeys(whitePianoKeys);
+WhiteKeys(whitePianoKeys);
 const blackPianoKeys = findAllBlackPianoKeys();
-bindClickListenerBlackKeys(blackPianoKeys);
+BlackKeys(blackPianoKeys);
+
 //piano bttns
 const playBttn = document.body.querySelector('.bttn-play');
-bindClickListenerPlayAudio(playBttn);
 const pauseBttn = document.body.querySelector('.bttn-pause');
-bindClickListenerPauseAudio(pauseBttn);
 const stopBttn = document.body.querySelector('.bttn-stop');
-bindClickListenerStopAudio(stopBttn);
+
+// checkbox
+const checkbox = document.body.querySelector('.check_input');
+
 
 // slider functions
 function findLeftButton() {
@@ -38,33 +39,27 @@ function findRightButton() {
     return rightButton;
 }
 
-function bindClickListenerLeftButton(leftButton) {
-    leftButton.addEventListener('click', () => {
-        findAudio().load();
-        indexPictures--;
-        position += picturesWhidth;
-        changPosition = slider.style.transform = `translateX(${position}px)`;
+leftButton.addEventListener('click', () => {
+    findAudio().load();
+    indexPictures--;
+    position += picturesWhidth;
+    changPosition = slider.style.transform = `translateX(${position}px)`;
 
-        activatingIndicators();
-        findAudio().play();
-        blockBttns();
-    });
+    activatingIndicators();
+    findAudio().play();
+    blockBttns();
+});
 
-}
+rightButton.addEventListener('click', () => {
+    findAudio().load();
+    indexPictures++;
+    position -= picturesWhidth;
+    changPosition = slider.style.transform = `translateX(${position}px)`;
 
-function bindClickListenerRightButton(rightButton) {
-    rightButton.addEventListener('click', () => {
-        findAudio().load();
-        indexPictures++;
-        position -= picturesWhidth;
-        changPosition = slider.style.transform = `translateX(${position}px)`;
-
-        activatingIndicators();
-        findAudio().play();
-        blockBttns();
-    });
-
-}
+    activatingIndicators();
+    findAudio().play();
+    blockBttns();
+});
 
 
 
@@ -73,12 +68,12 @@ function findAllWhitePianoKeys() {
     return keys;
 }
 
-function bindClickListenerWhiteKeys(pianoKeys) {
+function WhiteKeys(pianoKeys) {
     pianoKeys.forEach(pianoKeys => {
         pianoKeys.addEventListener('click', (pianoKeys) => {
             const dataNum = pianoKeys.toElement.dataset.numberKey;
-            console.log(dataNum);
             let audioKey = document.body.querySelector(`[data-key-num='${dataNum}']`);
+            audioKey.currentTime = 0;
             audioKey.play();
         });
     });
@@ -89,11 +84,12 @@ function findAllBlackPianoKeys() {
     return keys;
 }
 
-function bindClickListenerBlackKeys(pianoKeys) {
+function BlackKeys(pianoKeys) {
     pianoKeys.forEach(pianoKeys => {
         pianoKeys.addEventListener('click', (pianoKeys) => {
             const dataNum = pianoKeys.toElement.dataset.numberKeyBlack;
             let audioKey = document.body.querySelector(`[data-key-num='${dataNum}']`);
+            audioKey.currentTime = 0;
             audioKey.play();
         });
     });
@@ -107,27 +103,274 @@ function findAudio() {
     return audio;
 }
 
-function bindClickListenerPlayAudio(playBttn) {
-    playBttn.addEventListener('click', () => {
-        activatingIndicators();
-        findAudio().play();
-    });
+playBttn.addEventListener('click', () => {
+    if (indexPictures === 0) {
+        if (checkbox.checked) {
+            activatingIndicators();
+            setTimeout(audioAttention, 6500);
+            playAttention();
+        } else {
+            activatingIndicators();
+            findAudio().play();
+        }
+    } else if (indexPictures === 1) {
+        if (checkbox.checked) {
+            activatingIndicators();
+            setTimeout(audioWellHe, 4000);
+            wellHe();
+        } else {
+            activatingIndicators();
+            findAudio().play();
+        }
+    } else if (indexPictures === 2) {
+        if (checkbox.checked) {
+            activatingIndicators();
+        } else {
+            activatingIndicators();
+            findAudio().play();
+        }
+    }
+});
+
+pauseBttn.addEventListener('click', () => {
+    pauseIndicators();
+    findAudio().pause();
+});
+
+stopBttn.addEventListener('click', () => {
+    stopIndicators()
+    findAudio().load();
+});
+
+
+
+function audioAttention() {
+    findAudio().currentTime = 16;
+    findAudio().play();
 }
 
-function bindClickListenerPauseAudio(pauseBttn) {
-    pauseBttn.addEventListener('click', () => {
-        pauseIndicators();
-        findAudio().pause();
-    });
+function audioWellHe() {
+    findAudio().currentTime = 16.5;
+    findAudio().play();
 }
 
-function bindClickListenerStopAudio(stopBttn) {
-    stopBttn.addEventListener('click', () => {
-        stopIndicators()
-        findAudio().load();
-    });
+
+/* ===============================================================
+    Songs
+==================================================================*/
+function playAttention() {
+    let key_1 = document.body.querySelector('[data-number-key="s-re"]');
+    let key_2 = document.body.querySelector('[data-number-key-black="3-2b"]');
+    let key_3 = document.body.querySelector('[data-number-key="3-re"]');
+
+    function audio_1() {
+        let audioKey_1 = document.body.querySelector('[data-key-num="s-re"]');
+        return audioKey_1;
+    }
+    function audio_2() {
+        let audioKey_2 = document.body.querySelector('[data-key-num="3-2b"]');
+        return audioKey_2;
+    }
+    function audio_3() {
+        let audioKey_3 = document.body.querySelector('[data-key-num="3-re"]');
+        return audioKey_3;
+    }
+
+    setTimeout(function() {
+        key_1.className = 'piano-key active_w-b';
+        audio_1().volume = 0.2;
+        audio_1().play();
+        audio_1().currentTime = 0;
+
+        key_2.className = 'piano-key-black active_b-b';
+        audio_2().volume = 0.5;
+        audio_2().play();
+        audio_2().currentTime = 0;
+    }, 0);
+    setTimeout(function() {
+        key_1.className = 'piano-key';
+        key_2.className = 'piano-key-black';
+    }, 500);
+
+
+    setTimeout(function() {
+        key_3.className = 'piano-key active_w-b';
+        audio_3().volume = 0.5;
+        audio_3().play();
+        audio_3().currentTime = 0;
+    }, 1000);
+    setTimeout(function() {
+        key_3.className = 'piano-key';
+    }, 1500);
+
+
+    setTimeout(function() {
+        key_1.className = 'piano-key active_w-b';
+        audio_1().play();
+        audio_1().currentTime = 0;
+
+        key_2.className = 'piano-key-black active_b-b';
+        audio_2().play();
+        audio_2().currentTime = 0;
+    }, 2000);
+    setTimeout(function() {
+        key_1.className = 'piano-key';
+        key_2.className = 'piano-key-black';
+    }, 2500);
+    
+
+    setTimeout(function() {
+        key_3.className = 'piano-key active_w-b';
+        audio_3().play();
+        audio_3().currentTime = 0;
+    }, 3000);
+    setTimeout(function() {
+        key_3.className = 'piano-key';
+    }, 3500);
+
+
+    setTimeout(function() {
+        key_1.className = 'piano-key active_w-b';
+        audio_1().play();
+        audio_1().currentTime = 0;
+
+        key_2.className = 'piano-key-black active_b-b';
+        audio_2().play();
+        audio_2().currentTime = 0;
+    }, 4000);
+    setTimeout(function() {
+        key_1.className = 'piano-key';
+        key_2.className = 'piano-key-black';
+    }, 4500);
+    
+
+    setTimeout(function() {
+        key_3.className = 'piano-key active_w-b';
+        audio_3().volume = 0.5;
+        audio_3().play();
+        audio_3().currentTime = 0;
+    }, 5000);
+    setTimeout(function() {
+        key_3.className = 'piano-key';
+    }, 5500);
 }
 
+function wellHe() {
+    let key_1 = document.body.querySelector('[data-number-key="1-re"]');//F1
+    let key_2 = document.body.querySelector('[data-number-key="s-mi"]');
+    let key_3 = document.body.querySelector('[data-number-key-black="4-1b"]');
+    let key_4 = document.body.querySelector('[data-number-key="1-si"]');
+    let key_5 = document.body.querySelector('[data-number-key="2-do"]');
+    let key_6 = document.body.querySelector('[data-number-key="2-re"]');
+
+    function audio_1() {
+        let audioKey_1 = document.body.querySelector('[data-key-num="1-re"]');
+        return audioKey_1;
+    }
+    function audio_2() {
+        let audioKey_2 = document.body.querySelector('[data-key-num="s-mi"]');
+        return audioKey_2;
+    }
+    function audio_3() {
+        let audioKey_3 = document.body.querySelector('[data-key-num="4-1b"]');
+        return audioKey_3;
+    }
+    function audio_4() {
+        let audioKey_4 = document.body.querySelector('[data-key-num="1-si"]');
+        return audioKey_4;
+    }
+    function audio_5() {
+        let audioKey_5 = document.body.querySelector('[data-key-num="2-do"]');
+        return audioKey_5;
+    }
+    function audio_6() {
+        let audioKey_6 = document.body.querySelector('[data-key-num="2-re"]');
+        return audioKey_6;
+    }
+
+    setTimeout(function() {
+        key_1.className = 'piano-key active_w-b';
+        audio_1().volume = 0.5;
+        audio_1().play();
+        audio_1().currentTime = 0;
+
+        key_2.className = 'piano-key active_w-b';
+        audio_2().volume = 0.5;
+        audio_2().play();
+        audio_2().currentTime = 0;
+    }, 0);
+
+    setTimeout(function() {
+        key_1.className = 'piano-key';
+        key_2.className = 'piano-key';
+    }, 300);
+
+    setTimeout(function() {
+        key_3.className = 'piano-key-black active_b-b';
+        audio_3().volume = 0.5;
+        audio_3().play();
+        audio_3().currentTime = 0;
+    }, 600);
+
+    setTimeout(function() {
+        key_3.className = 'piano-key-black';
+    }, 900);
+
+    setTimeout(function() {
+        key_4.className = 'piano-key active_w-b';
+        audio_4().volume = 0.5;
+        audio_4().play();
+        audio_4().currentTime = 0;
+    }, 1000);
+
+    setTimeout(function() {
+        key_4.className = 'piano-key';
+    }, 1300);
+
+    setTimeout(function() {
+        key_5.className = 'piano-key active_w-b';
+        audio_5().volume = 0.5;
+        audio_5().play();
+        audio_5().currentTime = 0;
+    }, 1400);
+
+    setTimeout(function() {
+        key_5.className = 'piano-key';
+    }, 1700);
+
+    setTimeout(function() {
+        key_6.className = 'piano-key active_w-b';
+        audio_6().volume = 0.5;
+        audio_6().play();
+        audio_6().currentTime = 0;
+    }, 1800);
+
+    setTimeout(function() {
+        key_6.className = 'piano-key';
+    }, 2100);
+
+    setTimeout(function() {
+        key_3.className = 'piano-key-black active_b-b';
+        audio_3().volume = 0.5;
+        audio_3().play();
+        audio_3().currentTime = 0;
+    }, 2200);
+    
+    setTimeout(function() {
+        key_3.className = 'piano-key-black';
+    }, 2400);
+
+    setTimeout(function() {
+        key_5.className = 'piano-key active_w-b';
+        audio_5().volume = 0.5;
+        audio_5().play();
+        audio_5().currentTime = 0;
+    }, 2800);
+
+    setTimeout(function() {
+        key_5.className = 'piano-key';
+    }, 3100);
+}
 
 
 // Indicators

@@ -204,7 +204,6 @@ body {
                 0px 0px 1px 0px #fff9,
                 0px 0px 1px 0px #0001;
 }
-
 /* white-piano-key_end */
 
 
@@ -262,33 +261,25 @@ body {
     /* border: 1px solid #000; */
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 .container_indicators {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 35px;
+    height: 20px;
     width: 100%;
     /* border: 1px solid #000; */
     flex-direction: row;
 }
 
 .indicator {
-    height: 40%;
-    width: 15%;
-    transform: skew(330deg);
-    background: linear-gradient(152deg, #ff0a19, #d6180b);
+    height: 25%;
+    width: 90%;
+    transform: skew(135deg);
+    background: linear-gradient(90deg, #ff0a19, #d6180b);
     box-shadow: 1px 1px 4px 0px #cf392e, 1px 0px 8px #eca19b;
-}
-.active {
-    background: linear-gradient(152deg, #4dff5c, #23d60b);
-    box-shadow: 1px 1px 4px 0px #3bcf2e, -2px -1px 7px #3eff88;
-}
-.pause {
-    background: linear-gradient(152deg, #fffc4d, #d6d30b);
-    box-shadow: 1px 1px 4px 0px #cfcc2e, -2px -1px 7px #fffc3e;
 }
 
 .wrap-bttn-play {
@@ -326,6 +317,44 @@ body {
     margin: 0 auto;
 }
 
+/* checkbox */
+
+.check {
+    position: relative;
+}
+.check_input {
+    position: absolute;
+    -webkit-appearance: none;
+    appearance: none;
+}
+.check_fake {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    background: linear-gradient(130deg, #d2d2d4, #f9f9fd);
+    box-shadow: 2px 2px 4px #c6c6c9, -2px -2px 4px #ffffff;
+    cursor: pointer;
+}
+
+.check_fake::before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 10px;
+    width: 10px;
+    opacity: 0;
+    transition: .2s;
+    border-radius: 2px;
+    background: #e4e4e4;
+    box-shadow: 2px 2px 4px #c6c6c9, -2px -2px 4px #ffffff;
+}
+.check_input:checked + .check_fake::before {
+    opacity: 1;
+}
+
 /* github-start */
 .container-github {
     display: flex;
@@ -344,4 +373,30 @@ body {
     background-image: url(files/icon/github.svg);
     background-repeat: no-repeat;
     color: rgb(212 144 166);
+}
+
+
+/* active style */
+/* color indicators*/
+.active {
+    background: linear-gradient(152deg, #4dff5c, #23d60b);
+    box-shadow: 1px 1px 4px 0px #3bcf2e, -2px -1px 7px #3eff88;
+}
+.pause {
+    background: linear-gradient(152deg, #fffc4d, #d6d30b);
+    box-shadow: 1px 1px 4px 0px #cfcc2e, -2px -1px 7px #fffc3e;
+}
+
+
+.active_w-b {
+    border: 1px solid rgb(253, 215, 0);
+    box-shadow: none;
+    box-shadow: -2px -2px 8px 0px #fff9,
+                0px 0px 1px 0px #fff9,
+                0px 0px 1px 0px #0001;
+}
+.active_b-b {
+    border: 1px solid rgb(253, 215, 0);
+    background: linear-gradient(272deg, #6b6b6b, #000000);
+    box-shadow: inset 1px 1px 2px #2f2f2f;
 }
