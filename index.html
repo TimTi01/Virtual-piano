@@ -9,40 +9,49 @@
     <title>Virtual-piano</title>
 </head>
 <body>
+    <!-- !--- -->
     <header class="header">
         <h1 class="header-text">Virtual piano</h1>
     </header>
-
+    <!-- !--- -->
+    <!-- !--- -->
+    <!-- !--- -->
     <main class="content">
         <div class="content_container-slider">
-
+            <!-- ---- -->
             <div class="slider_button-wrap-left">
                 <button class="slider_button-left"></button>
             </div>
-
+            <!-- ---- -->
             <div class="slider">            
                 <div class="container-picture">
                     <div class="slider-track">
-                        <img class="picture_1" src="files/photos/img-attention.png" alt="modus" data-index="0" data-elem="pictures" data-pictures="attention">
-                        <img class="picture_2" src="files/photos/img-will-he.png" alt="will-he" data-index="1" data-elem="pictures" data-pictures="will-he">
-                        <img class="picture_3" src="files/photos/img-modus.png" alt="modus" data-index="2" data-elem="pictures" data-pictures="modus">
+                        <img class="picture" src="files/photos/img-attention.png" alt="modus" data-picture-number="1" data-elem="pictures" data-pictures="attention">
+                        <img class="picture" src="files/photos/img-will-he.png" alt="will-he" data-picture-number="2" data-elem="pictures" data-pictures="will-he">
+                        <img class="picture" src="files/photos/img-modus.png" alt="modus" data-picture-number="3" data-elem="pictures" data-pictures="modus">
                     </div>
                 </div>
             </div>
-
+            <!-- ---- -->
             <div class="slider_button-wrap-right">
                 <button class="slider_button-right"></button>
             </div>
-
+            <!-- ---- -->
         </div>
-        
+        <!-- !--- -->
+        <!-- !--- -->
+        <!-- !--- -->
+        <span class="slider_count">0/0</span>
+        <!-- !--- -->
+        <!-- !--- -->
+        <!-- !--- -->
         <div class="piano">
             <div class="container-top">
-
+                <!-- ---- -->
                 <div class="container-github">
                     <a class="github" href="https://github.com/TimTi01" target="_blank"></a>
                 </div>
-
+                <!-- ---- -->
                 <div class="piano-key" data-number-key="2"></div>
                 <div class="piano-key" data-number-key="3"></div>
                 <!-- ~~~~~~~~ -->
@@ -71,11 +80,14 @@
                 <div class="piano-key" data-number-key="s-sol"></div>
                 <div class="piano-key" data-number-key="s-la"></div>
                 <div class="piano-key" data-number-key="s-si"></div>
-
+                <!-- !--- -->
+                <!-- !--- -->
+                <!-- !--- -->
                 <div class="container-bttns">
                     <div class="container_indicators">
                         <div class="indicator"></div>
                     </div>
+                    <!-- ---- -->
                     <div class="wrap-bttn-play">
                         <button class="playback-buttons bttn-play">
                             <img class="img_play" src="files/icon/play.svg" alt="button play">
@@ -87,12 +99,15 @@
                             <img class="img_stop" src="files/icon/stop.svg" alt="button play">
                         </button>
                     </div>
+                    <!-- ---- -->
                     <label class="check" title="Auto play piano on/off">
                         <input class="check_input" type="checkbox" checked>
                         <span class="check_fake"></span>
                     </label>
                 </div>
-
+                <!-- !--- -->
+                <!-- !--- -->
+                <!-- !--- -->
                 <div class="wrap-keys-black-top">
                     <div class="piano-key-black-none" data-number-key-black="none"></div>
                     <div class="piano-key-black" data-number-key-black="sb"></div>
@@ -122,6 +137,9 @@
                     <div class="piano-key-black" data-number-key-black="5-sb"></div>
                 </div>
             </div>
+            <!-- !--- -->
+            <!-- !--- -->
+            <!-- !--- -->
             <div class="container-bottom">
                 <!-- 1-octave -->
                 <div class="piano-key" data-number-key="1-do"></div>
@@ -193,6 +211,8 @@
                 </div>
             </div>
     </main>
+    <!-- !--- -->
+    <!-- !--- -->
     <!-- audio -->
     <div class="audio_piano-keys">
         <!-- s-octave-audio -->
@@ -238,7 +258,7 @@
         <!-- 5-octave-audio -->
         <audio data-key-num="5-do" src="files/notes/8--5rd_octave/5-do.mp3"></audio>
 
-        <!-- black-keys -->
+        <!-- audio-black-keys -->
         <!-- s-black -->
         <audio data-key-num="1-sb" src="files/notes/3--s_octave/s-oct-black/1-sb.mp3"></audio>
         <audio data-key-num="2-sb" src="files/notes/3--s_octave/s-oct-black/2-sb.mp3"></audio>

@@ -1,15 +1,14 @@
 // slider
-// let chboxOnOff = "on";
+let songNumber = 1;
 let indexPictures = 0;
 let position = 0;
-let numberPictures = document.body.querySelectorAll('[data-elem="pictures"]').length; //3
+let numberPictures = document.body.querySelectorAll('[data-elem="pictures"]').length;
 let wrapSlider = document.body.querySelector('.container-picture');
-let wrapSliderWidth = wrapSlider.offsetWidth; //390px
+let wrapSliderWidth = wrapSlider.offsetWidth; 
 let slider = document.body.querySelector('.slider-track');
 let sliderWhidth = slider.offsetWidth;
 let picturesWhidth = wrapSliderWidth;
 let trackWidth = (numberPictures * picturesWhidth) - wrapSliderWidth;
-
 // slider left and right bttns
 const leftButton = findLeftButton();
 const rightButton = findRightButton();
@@ -18,14 +17,14 @@ const whitePianoKeys = findAllWhitePianoKeys();
 WhiteKeys(whitePianoKeys);
 const blackPianoKeys = findAllBlackPianoKeys();
 BlackKeys(blackPianoKeys);
-
 //piano bttns
 const playBttn = document.body.querySelector('.bttn-play');
 const pauseBttn = document.body.querySelector('.bttn-pause');
 const stopBttn = document.body.querySelector('.bttn-stop');
-
 // checkbox
 const checkbox = document.body.querySelector('.check_input');
+// slider count
+let sliderCount = document.body.querySelector('.slider_count');
 
 
 // slider functions
@@ -40,6 +39,9 @@ function findRightButton() {
 }
 
 leftButton.addEventListener('click', () => {
+    songNumber--;
+    count();
+
     findAudio().load();
     indexPictures--;
     position += picturesWhidth;
@@ -51,6 +53,9 @@ leftButton.addEventListener('click', () => {
 });
 
 rightButton.addEventListener('click', () => {
+    songNumber++;
+    count();
+
     findAudio().load();
     indexPictures++;
     position -= picturesWhidth;
@@ -60,6 +65,10 @@ rightButton.addEventListener('click', () => {
     findAudio().play();
     blockBttns();
 });
+
+function count() {
+    sliderCount.textContent = `${songNumber}/${numberPictures}`;
+}
 
 
 
@@ -407,3 +416,4 @@ function styleСhangeSliderBttn() {
 
 
 blockBttns();
+count();
