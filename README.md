@@ -2,7 +2,9 @@
 
 ---
 
-https://user-images.githubusercontent.com/74858329/119730203-20c6fa80-be7e-11eb-95be-6e2d51519d85.mov
+
+https://user-images.githubusercontent.com/74858329/119976502-d6e62d80-bfbf-11eb-96f4-6c57a92ac203.mov
+
 
 App Features:
 * Sound playback when pressing the white and black keys, as well as animation of pressing the keys.
